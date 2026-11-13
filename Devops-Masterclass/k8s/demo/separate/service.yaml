@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2026-11-13T14:05:46Z"
+  labels:
+    app: web
+  name: web
+  namespace: default
+  resourceVersion: "1579"
+  uid: a79ef252-21b3-4c89-baf0-b13ee5e8ec59
+spec:
+  clusterIP: 10.96.77.76
+  clusterIPs:
+  - 10.96.77.76
+  externalTrafficPolicy: Cluster
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - nodePort: 32042
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: web
+  sessionAffinity: None
+  type: NodePort
+status:
+  loadBalancer: {}
